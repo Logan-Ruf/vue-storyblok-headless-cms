@@ -40,7 +40,8 @@ module.exports = {
       },
       transitionDelay: {
         50: "50ms",
-        250: "250ms"
+        250: "250ms",
+        400: "400ms"
       }
     }
   },

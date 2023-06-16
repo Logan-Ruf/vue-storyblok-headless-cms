@@ -16,7 +16,9 @@ const config: NuxtConfig = {
     }
   },
   vite: {
-    resolve: { alias: { vue: "vue/dist/vue.esm-bundler.js" } },
+    resolve: {
+      alias: process.env.NODE_ENV === "development" ? { vue: "vue/dist/vue.esm-bundler.js" } : {}
+    },
     vue: {
       customElement: true
     },

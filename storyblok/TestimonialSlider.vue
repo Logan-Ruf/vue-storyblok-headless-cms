@@ -10,6 +10,7 @@ const props = defineProps<PropTypes>()
 
 <template>
   <Swiper
+    v-editable="props.blok"
     class="max-w-4xl"
     :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperA11y]"
     :slides-per-view="1"
@@ -21,6 +22,7 @@ const props = defineProps<PropTypes>()
   >
     <SwiperSlide
       v-for="tm of props.blok.testimonials"
+      v-editable="tm"
       :key="tm.name"
       class="h-auto flex-col px-12 py-4"
       style="height: auto !important; display: flex !important"

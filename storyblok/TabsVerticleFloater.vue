@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { Tab, TabGroup, TabList, TabPanels } from "@headlessui/vue"
 import { useElementBounding, breakpointsTailwind, useBreakpoints } from "@vueuse/core"
+import { TabsVerticleFloaterStoryblok } from "~/types/component-types-sb"
 
 // Handle 3D parallax effect
 const tab_wrapper = ref(null)
@@ -13,22 +14,8 @@ const { y: panel_y, height: panel_height } = useElementBounding(panel_background
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const small = breakpoints.isSmallerOrEqual("md")
 
-interface tab extends blok {
-  title: string
-  content: string
-  logo: sbAsset
-  image: sbAsset
-  link: sbLink
-}
-
-interface TabsVerticleFloaterBlok extends blok {
-  title: string
-  subtitle: string
-  tabs: tab[]
-}
-
 interface PropTypes {
-  blok: TabsVerticleFloaterBlok
+  blok: TabsVerticleFloaterStoryblok
 }
 
 const props = defineProps<PropTypes>()
@@ -77,9 +64,9 @@ const panels = props.blok.tabs.map((tab) => {
                 :src="tab.logo.filename"
                 :alt="tab.logo.alt"
                 class="hidden h-20 w-20 shrink-0 rounded-xl border-2 border-white shadow-md md:block lg:h-24 lg:w-24"
-                format="png"
                 width="288"
                 height="288"
+                loading="lazy"
               />
               <span class="font-semibold md:text-xl">{{ tab.title }}</span>
             </button>
@@ -127,6 +114,7 @@ const panels = props.blok.tabs.map((tab) => {
           <component :is="panels[selectedIndex]" :tab="props.blok.tabs[selectedIndex]">
             <template v-slot="{ tab }">
               <NuxtPicture
+                class="duration-500"
                 :imgAttrs="{
                   class: 'aspect-[3/2] w-full rounded-2xl object-cover shadow-md transition-all duration-500'
                 }"
@@ -142,10 +130,10 @@ const panels = props.blok.tabs.map((tab) => {
               <p class="mr-20 text-base leading-7 text-gray-600 transition-all delay-250 duration-500">
                 {{ tab.content }}
               </p>
-              <div class="delay-350 duration-500">
+              <div class="delay-400 duration-500">
                 <a
                   :href="tab.link.url"
-                  class="rounded-md bg-sand-1000 px-3.5 py-2.5 text-sm font-semibold text-charcoal-50 shadow-sm hover:bg-sand-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                  class="delay-350 rounded-md bg-sand-1000 px-3.5 py-2.5 text-sm font-semibold text-charcoal-50 shadow-sm hover:bg-sand-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >Read more</a
                 >
               </div>
