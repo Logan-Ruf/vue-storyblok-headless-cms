@@ -10,6 +10,44 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: ({ theme }) => ({
+        charcoal: {
+          css: {
+            "--tw-prose-body": theme("colors.charcoal[800]"),
+            "--tw-prose-headings": theme("colors.charcoal[900]"),
+            "--tw-prose-lead": theme("colors.charcoal[700]"),
+            "--tw-prose-links": theme("colors.charcoal[900]"),
+            "--tw-prose-bold": theme("colors.charcoal[900]"),
+            "--tw-prose-counters": theme("colors.charcoal[600]"),
+            "--tw-prose-bullets": theme("colors.charcoal[400]"),
+            "--tw-prose-hr": theme("colors.charcoal[300]"),
+            "--tw-prose-quotes": theme("colors.charcoal[900]"),
+            "--tw-prose-quote-borders": theme("colors.charcoal[300]"),
+            "--tw-prose-captions": theme("colors.charcoal[700]"),
+            "--tw-prose-code": theme("colors.charcoal[900]"),
+            "--tw-prose-pre-code": theme("colors.charcoal[100]"),
+            "--tw-prose-pre-bg": theme("colors.charcoal[900]"),
+            "--tw-prose-th-borders": theme("colors.charcoal[300]"),
+            "--tw-prose-td-borders": theme("colors.charcoal[200]"),
+            "--tw-prose-invert-body": theme("colors.charcoal[200]"),
+            "--tw-prose-invert-headings": theme("colors.white"),
+            "--tw-prose-invert-lead": theme("colors.charcoal[300]"),
+            "--tw-prose-invert-links": theme("colors.white"),
+            "--tw-prose-invert-bold": theme("colors.white"),
+            "--tw-prose-invert-counters": theme("colors.charcoal[400]"),
+            "--tw-prose-invert-bullets": theme("colors.charcoal[600]"),
+            "--tw-prose-invert-hr": theme("colors.charcoal[700]"),
+            "--tw-prose-invert-quotes": theme("colors.charcoal[100]"),
+            "--tw-prose-invert-quote-borders": theme("colors.charcoal[700]"),
+            "--tw-prose-invert-captions": theme("colors.charcoal[400]"),
+            "--tw-prose-invert-code": theme("colors.white"),
+            "--tw-prose-invert-pre-code": theme("colors.charcoal[300]"),
+            "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 50%)",
+            "--tw-prose-invert-th-borders": theme("colors.charcoal[600]"),
+            "--tw-prose-invert-td-borders": theme("colors.charcoal[700]")
+          }
+        }
+      }),
       colors: {
         charcoal: {
           DEFAULT: "#4c4d4f",

@@ -1,17 +1,12 @@
 <script setup lang="ts">
-import { HomeFeaturesStoryblok, RichtextStoryblok } from "~/types/component-types-sb"
+import { HomeFeaturesStoryblok } from "~/types/component-types-sb"
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue"
-import { renderRichText } from "@storyblok/js"
 
 interface PropTypes {
   blok: HomeFeaturesStoryblok
 }
 
 const props = defineProps<PropTypes>()
-
-function renderContent(content: RichtextStoryblok) {
-  return renderRichText(content)
-}
 </script>
 
 <template>
@@ -33,8 +28,19 @@ function renderContent(content: RichtextStoryblok) {
     </div>
     <div class="mx-auto mt-16 flex max-w-7xl flex-col items-center px-6 lg:px-8">
       <TabGroup>
-        <TabList>
-          <Tab v-for="tab in props.blok.panels">{{ tab.heading }}</Tab>
+        <TabList class="mb-2 flex space-x-1 rounded-xl bg-charcoal-100/50 p-1">
+          <Tab v-for="tab in props.blok.panels" :key="tab._uid" as="template" v-slot="{ selected }">
+            <button
+              :class="[
+                'rounded-lg px-6 py-3',
+                selected ? 'bg-white text-charcoal-900' : 'text-charcoal-700 hover:bg-charcoal-100'
+              ]"
+            >
+              {{ tab.heading }}
+              <div
+                :class="['border-t-2 border-charcoal-600/50 transition-all duration-300', selected ? 'w-full' : 'w-0']"
+              ></div></button
+          ></Tab>
         </TabList>
         <TabPanels>
           <TabPanel v-for="child_block in blok.panels">
