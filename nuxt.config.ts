@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import type { NuxtConfig } from "@nuxt/types"
+import { RichTextSchema } from "@storyblok/js"
 
 const config: NuxtConfig = {
   css: ["@/assets/css/main.css"],
@@ -38,6 +39,9 @@ const config: NuxtConfig = {
     accessToken: process.env.STORYBLOCK_TOKEN,
     bridge: process.env.NODE_ENV === "development",
     devtools: process.env.NODE_ENV === "development",
+    richText: {
+      shcema: RichTextSchema
+    },
     apiOptions: {
       region: "us" // Set 'US" if your space is created in US region (EU default)
     }

@@ -32,9 +32,9 @@ const slots = useSlots()
             class="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-x-5 gap-y-12 lg:mx-0 lg:mt-8 lg:max-w-none lg:grid-cols-12"
           >
             <div v-if="!!slots['content-floater-figures']" class="relative lg:order-last lg:col-span-5">
-              <div class="flex flex-row items-stretch justify-evenly border-l border-sand-700 py-6 pl-3">
+              <dl class="flex flex-row items-stretch justify-evenly border-l border-sand-700 py-6 pl-3">
                 <slot name="content-floater-figures"></slot>
-              </div>
+              </dl>
             </div>
             <div class="max-w-xl text-base leading-7 text-gray-700 lg:col-span-7">
               <p class="whitespace-pre-wrap">
@@ -44,6 +44,7 @@ const slots = useSlots()
           </div>
         </div>
       </div>
+
       <svg
         viewBox="0 0 1024 1024"
         class="absolute left-1/2 top-1/2 -z-10 h-[84rem] w-[84rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"

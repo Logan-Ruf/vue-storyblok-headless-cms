@@ -2,7 +2,7 @@
 import HeroComponent from "~/components/HeroComponent.vue"
 
 interface PropTypes {
-  blok: blok
+  blok: Object
 }
 
 const props = defineProps<PropTypes>()

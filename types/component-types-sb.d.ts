@@ -38,58 +38,6 @@ export interface ArticleStoryblok {
   [k: string]: any;
 }
 
-export interface ColumnStoryblok {
-  title?: string;
-  description?: string;
-  image?: AssetStoryblok;
-  _uid: string;
-  component: "Column";
-  [k: string]: any;
-}
-
-export interface ContentCTAStoryblok {
-  title?: string;
-  text?: string;
-  ctas?: any[];
-  _uid: string;
-  component: "ContentCTA";
-  [k: string]: any;
-}
-
-export interface ContentFloaterStoryblok {
-  contentFloaterTitle?: string;
-  contentFloaterBigText?: string;
-  contentFloaterSmallText?: string;
-  contentFloaterFigures?: any[];
-  _uid: string;
-  component: "ContentFloater";
-  [k: string]: any;
-}
-
-export interface ContentFloaterFigureStoryblok {
-  value?: string;
-  text?: string;
-  _uid: string;
-  component: "ContentFloaterFigure";
-  [k: string]: any;
-}
-
-export interface FeatureStoryblok {
-  name?: string;
-  _uid: string;
-  component: "feature";
-  [k: string]: any;
-}
-
-export interface FooterBlokStoryblok {
-  links?: FooterLinkStoryblok[];
-  icons?: IconLinkStoryblok[];
-  copy?: string;
-  _uid: string;
-  component: "FooterBlok";
-  [k: string]: any;
-}
-
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
@@ -145,6 +93,72 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface ButtonOutlineStoryblok {
+  text?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: "ButtonOutline";
+  [k: string]: any;
+}
+
+export interface ColumnStoryblok {
+  title?: string;
+  description?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: "Column";
+  [k: string]: any;
+}
+
+export interface ContentCTAStoryblok {
+  title?: string;
+  text?: string;
+  ctas?: (PrimaryButtonStoryblok | SecondaryButtonStoryblok | ButtonOutlineStoryblok)[];
+  _uid: string;
+  component: "ContentCTA";
+  [k: string]: any;
+}
+
+export interface ContentFloaterStoryblok {
+  contentFloaterTitle?: string;
+  contentFloaterBigText?: string;
+  contentFloaterSmallText?: string;
+  contentFloaterFigures?: any[];
+  _uid: string;
+  component: "ContentFloater";
+  [k: string]: any;
+}
+
+export interface ContentFloaterFigureStoryblok {
+  value?: string;
+  text?: string;
+  _uid: string;
+  component: "ContentFloaterFigure";
+  [k: string]: any;
+}
+
+export interface FeatureStoryblok {
+  name?: string;
+  _uid: string;
+  component: "feature";
+  [k: string]: any;
+}
+
+export interface FeaturesStoryblok {
+  _uid: string;
+  component: "Features";
+  [k: string]: any;
+}
+
+export interface FooterBlokStoryblok {
+  links?: FooterLinkStoryblok[];
+  icons?: IconLinkStoryblok[];
+  copy?: string;
+  _uid: string;
+  component: "FooterBlok";
+  [k: string]: any;
+}
+
 export interface FooterLinkStoryblok {
   text?: string;
   link?: MultilinkStoryblok;
@@ -179,6 +193,16 @@ export interface GridStoryblok {
   [k: string]: any;
 }
 
+export interface HeroStoryblok {
+  title?: string;
+  bigText?: string;
+  smallText?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: "Hero";
+  [k: string]: any;
+}
+
 export interface HeroVideoStoryblok {
   topButton?: any;
   topButtonText?: string;
@@ -189,6 +213,24 @@ export interface HeroVideoStoryblok {
   ctas?: any[];
   _uid: string;
   component: "HeroVideo";
+  [k: string]: any;
+}
+
+export interface HomeFeaturesStoryblok {
+  title?: string;
+  stats?: StatDataStoryblok[];
+  panels?: HomeFeaturesPanelStoryblok[];
+  _uid: string;
+  component: "HomeFeatures";
+  [k: string]: any;
+}
+
+export interface HomeFeaturesPanelStoryblok {
+  heading?: string;
+  content?: RichtextStoryblok;
+  images?: MultiassetStoryblok;
+  _uid: string;
+  component: "HomeFeaturesPanel";
   [k: string]: any;
 }
 
@@ -289,7 +331,6 @@ export interface NavBarMobileLinkStoryblok {
 }
 
 export interface PageStoryblok {
-  header_type: "" | "default" | "overlay";
   body?: any[];
   _uid: string;
   component: "page";
@@ -319,6 +360,14 @@ export interface SecondaryButtonStoryblok {
   dark?: boolean;
   _uid: string;
   component: "SecondaryButton";
+  [k: string]: any;
+}
+
+export interface StatDataStoryblok {
+  name?: string;
+  value?: string;
+  _uid: string;
+  component: "StatData";
   [k: string]: any;
 }
 

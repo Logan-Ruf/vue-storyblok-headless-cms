@@ -7,10 +7,10 @@ const props = defineProps<PropTypes>()
 </script>
 
 <template>
-  <figure class="text-center text-5xl font-bold text-sand-800">
-    {{ props.blok.value }}
-    <figcaption class="text-lg font-semibold">
+  <div v-editable="props.blok" class="flex flex-col-reverse text-center text-5xl font-bold text-sand-800">
+    <dt class="text-lg font-semibold">
       {{ props.blok.text }}
-    </figcaption>
-  </figure>
+    </dt>
+    <dl>{{ props.blok.value }}</dl>
+  </div>
 </template>
