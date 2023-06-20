@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { HomeFeaturesStoryblok } from "~/types/component-types-sb"
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue"
+import { HomeFeaturesStoryblok } from "~/types/component-types-sb"
 
 interface PropTypes {
   blok: HomeFeaturesStoryblok
@@ -10,7 +10,7 @@ const props = defineProps<PropTypes>()
 </script>
 
 <template>
-  <div class="bg-white py-24 sm:py-32">
+  <div class="bg-white py-24 sm:py-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="text-center">
@@ -26,10 +26,19 @@ const props = defineProps<PropTypes>()
         </dl>
       </div>
     </div>
-    <div class="mx-auto mt-16 flex max-w-7xl flex-col items-center px-6 lg:px-8">
+    <div class="mx-auto mt-16 flex flex-col items-center px-3 lg:px-8">
       <TabGroup>
-        <TabList class="mb-2 flex space-x-1 rounded-xl bg-charcoal-100/50 p-1">
-          <Tab v-for="tab in props.blok.panels" :key="tab._uid" as="template" v-slot="{ selected }">
+        <TabList
+          ref="tablist"
+          class="mb-2 flex max-w-full space-x-1 overflow-y-scroll rounded-xl bg-charcoal-100/50 p-1 lg:overflow-hidden"
+        >
+          <Tab
+            v-for="tab in props.blok.panels"
+            :key="tab._uid"
+            v-slot="{ selected }"
+            as="template"
+            @click="$event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })"
+          >
             <button
               :class="[
                 'rounded-lg px-6 py-3',
