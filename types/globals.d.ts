@@ -7,4 +7,5 @@ declare global {
     options?: SbRichTextOptions,
     resolverInstance?: RichtextResolver
   ): string
+  function useSlots(): Record<string, unknown>
 }

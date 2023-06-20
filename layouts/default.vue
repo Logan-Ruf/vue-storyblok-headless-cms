@@ -6,7 +6,9 @@ const story = await useAsyncStoryblok("layouts/default", {
 
 <template>
   <div>
-    <StoryblokComponent v-for="blok in story?.content?.header" :key="blok._uid" :blok="blok" />
+    <div>
+      <StoryblokComponent v-for="blok in story?.content?.header" :key="blok._uid" :blok="blok" />
+    </div>
     <slot />
     <StoryblokComponent v-for="blok in story?.content?.footer" :key="blok._uid" :blok="blok" />
   </div>

@@ -29,14 +29,14 @@ const props = defineProps<PropTypes>()
     <div class="mx-auto mt-16 flex flex-col items-center px-3 lg:px-8">
       <TabGroup>
         <TabList
-          class="mb-2 flex max-w-full space-x-1 overflow-y-scroll rounded-xl bg-charcoal-100/50 p-1 lg:overflow-hidden"
+          class="mb-4 flex max-w-full space-x-1 overflow-y-scroll rounded-xl bg-charcoal-100/50 p-1 md:mb-2 lg:overflow-hidden"
         >
           <Tab
             v-for="tab in props.blok.panels"
             :key="tab._uid"
             v-slot="{ selected }"
             as="template"
-            @click="$event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })"
+            @click="$event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })"
           >
             <button
               :class="[
@@ -51,7 +51,7 @@ const props = defineProps<PropTypes>()
           ></Tab>
         </TabList>
         <TabPanels>
-          <TabPanel v-for="child_block in blok.panels">
+          <TabPanel v-for="child_block in blok.panels" class="mx-auto w-screen max-w-6xl overflow-hidden md:w-full">
             <StoryblokComponent :key="child_block._uid" :blok="child_block" />
           </TabPanel>
         </TabPanels>
