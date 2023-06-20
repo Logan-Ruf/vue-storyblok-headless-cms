@@ -11,7 +11,9 @@ const props = defineProps<PropTypes>()
 <template>
   <div v-editable="props.blok" class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
     <div class="px-6 md:px-0 lg:pr-4 lg:pt-4">
-      <div class="prose prose-charcoal mx-auto max-w-2xl lg:prose-xl lg:mx-0 lg:max-w-lg">
+      <div
+        class="prose prose-charcoal mx-auto max-w-2xl overflow-hidden lg:prose-xl prose-li:-my-2 lg:mx-0 lg:max-w-lg"
+      >
         <h2>{{ props.blok.heading }}</h2>
         <div v-html="renderRichText(props.blok.content)"></div>
       </div>

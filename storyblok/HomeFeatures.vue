@@ -10,7 +10,7 @@ const props = defineProps<PropTypes>()
 </script>
 
 <template>
-  <div class="bg-white py-24 sm:py-20">
+  <div v-editable="props.blok" class="bg-white py-24 sm:py-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:max-w-none">
         <div class="text-center">
@@ -29,7 +29,6 @@ const props = defineProps<PropTypes>()
     <div class="mx-auto mt-16 flex flex-col items-center px-3 lg:px-8">
       <TabGroup>
         <TabList
-          ref="tablist"
           class="mb-2 flex max-w-full space-x-1 overflow-y-scroll rounded-xl bg-charcoal-100/50 p-1 lg:overflow-hidden"
         >
           <Tab
