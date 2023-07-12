@@ -4,10 +4,16 @@ interface PropTypes {
 }
 
 const props = defineProps<PropTypes>()
+
+const titleHasText = Boolean(props.blok.bannerText || props.blok.bannerTitle)
+const styles = {
+  background: titleHasText ? " bg-charcoal-900" : "",
+  opacity: titleHasText ? " opacity-25" : ""
+}
 </script>
 
 <template>
-  <div v-editable="props.blok" class="relative flex h-56 overflow-hidden bg-charcoal-900 lg:h-72">
+  <div v-editable="props.blok" :class="'relative flex h-56 overflow-hidden lg:h-72' + styles.background">
     <div class="relative z-10 mx-auto pt-20 text-center sm:pt-16 lg:m-auto lg:pt-10">
       <h2 v-if="props.blok?.bannerTitle" class="text-4xl font-bold tracking-tight text-white">
         {{ props.blok?.bannerTitle }}
@@ -18,6 +24,7 @@ const props = defineProps<PropTypes>()
       </div>
     </div>
     <svg
+      v-if="titleHasText"
       class="absolute -top-2 w-screen -translate-y-1/2 transform"
       viewBox="0 0 1024 1024"
       aria-hidden="true"
@@ -34,7 +41,7 @@ const props = defineProps<PropTypes>()
     <NuxtPicture
       :src="props.blok?.image.filename"
       :imgAttrs="{
-        class: 'opacity-25 absolute inset-0 w-full object-cover h-full',
+        class: 'absolute inset-0 w-full object-cover h-full' + styles.opacity,
         alt: props.blok?.image.alt
       }"
     ></NuxtPicture>
