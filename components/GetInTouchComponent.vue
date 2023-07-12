@@ -1,5 +1,5 @@
 <template>
-  <div id="contact" class="relative isolate bg-white">
+  <div id="contact" class="relative isolate mt-20 bg-white">
     <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
       <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
         <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
