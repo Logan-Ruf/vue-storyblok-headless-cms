@@ -44,7 +44,7 @@ watch(useOverlay, (val) => {
 })
 
 const sharedStyles = {
-  headerClass: "absolute top z-30 flex w-full overflow-visible motion-safe:transition-all motion-safe:duration-500 ",
+  headerClass: "flex overflow-visible motion-safe:transition-all motion-safe:duration-500 ",
   popoverTextColor: "motion-safe:transition-colors motion-safe:duration-500 ",
   button: "rounded text-sm ml-1.5 px-3 py-1 motion-safe:transition-colors motion-safe:duration-500 ",
   nuxtLinkClass: "rounded p-1.5 font-semibold leading-6 motion-safe:transition-colors motion-safe:duration-500 ",
