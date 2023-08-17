@@ -277,6 +277,14 @@ export interface GridStoryblok {
   [k: string]: any;
 }
 
+export interface HeaderBannerStoryblok {
+  text?: RichtextStoryblok;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: "HeaderBanner";
+  [k: string]: any;
+}
+
 export interface HeroStoryblok {
   title: string;
   bigText: string;
