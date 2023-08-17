@@ -15,15 +15,7 @@ const props = defineProps<PropTypes>()
       <div v-html="renderRichText(props.blok.text)" />
     </a>
     <div class="flex flex-1 justify-end">
-      <button
-        type="button"
-        class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-        @click="
-          () => {
-            show = false
-          }
-        "
-      >
+      <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]" @click="show = false">
         <span class="sr-only">Dismiss</span>
         <Icon name="octicon:x-24" class="h-5 w-5 text-white" aria-hidden="true" />
       </button>
