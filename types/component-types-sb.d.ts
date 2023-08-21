@@ -366,6 +366,13 @@ export interface IconLinkStoryblok {
   [k: string]: any;
 }
 
+export interface IframeBlokStoryblok {
+  url: MultilinkStoryblok;
+  _uid: string;
+  component: "iframeBlok";
+  [k: string]: any;
+}
+
 export interface ImageCardStoryblok {
   image?: AssetStoryblok;
   category?: string;

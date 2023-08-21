@@ -47,11 +47,7 @@
           </dl>
         </div>
       </div>
-      <div class="px-6 pb-20 pt-16 sm:pb-28 lg:px-8 lg:py-40">
-        <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-          <slot name="form"></slot>
-        </div>
-      </div>
+      <slot name="form"></slot>
     </div>
   </div>
 </template>
