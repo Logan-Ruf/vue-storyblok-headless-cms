@@ -117,6 +117,22 @@ export interface ButtonOutlineStoryblok {
   [k: string]: any;
 }
 
+export interface CalloutContainerStoryblok {
+  items: CalloutItemStoryblok[];
+  _uid: string;
+  component: "CalloutContainer";
+  [k: string]: any;
+}
+
+export interface CalloutItemStoryblok {
+  icon: "fa6-solid:handshake" | "fa6-solid:eye" | "fa6-solid:compass" | "fa6-solid:binoculars";
+  heading: string;
+  content: string;
+  _uid: string;
+  component: "CalloutItem";
+  [k: string]: any;
+}
+
 export interface ColumnTwoDividerStoryblok {
   header?: string;
   headerOne?: string;
@@ -511,6 +527,13 @@ export interface SelectHomeModelStoryblok {
   homeModels?: (StoryblokStory<HomeModelStoryblok> | string)[];
   _uid: string;
   component: "SelectHomeModel";
+  [k: string]: any;
+}
+
+export interface StandardContainerStoryblok {
+  body?: any[];
+  _uid: string;
+  component: "StandardContainer";
   [k: string]: any;
 }
 
