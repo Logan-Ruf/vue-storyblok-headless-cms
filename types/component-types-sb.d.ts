@@ -133,6 +133,14 @@ export interface CalloutItemStoryblok {
   [k: string]: any;
 }
 
+export interface ChipButtonStoryblok {
+  text?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: "ChipButton";
+  [k: string]: any;
+}
+
 export interface ColumnTwoDividerStoryblok {
   header?: string;
   headerOne?: string;
@@ -141,6 +149,23 @@ export interface ColumnTwoDividerStoryblok {
   contentTwo?: string;
   _uid: string;
   component: "ColumnTwoDivider";
+  [k: string]: any;
+}
+
+export interface ContactCTAStoryblok {
+  body: ContactCtaItemStoryblok[];
+  _uid: string;
+  component: "ContactCTA";
+  [k: string]: any;
+}
+
+export interface ContactCTAItemStoryblok {
+  title: string;
+  icon: "fa6-solid:house" | "fa6-solid:user";
+  content: RichtextStoryblok;
+  buttons: ChipButtonStoryblok[];
+  _uid: string;
+  component: "ContactCTAItem";
   [k: string]: any;
 }
 
