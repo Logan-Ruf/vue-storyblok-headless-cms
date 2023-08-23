@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { ContentFloaterFigureStoryblok } from "~/types/component-types-sb"
+
 interface PropTypes {
-  blok: Object
+  blok: ContentFloaterFigureStoryblok
 }
 
 const props = defineProps<PropTypes>()
