@@ -11,7 +11,7 @@ const props = defineProps<PropTypes>()
 <template>
   <iframe
     v-editable="props.blok"
-    class="h-full w-full"
+    class="h-full min-h-[40rem] w-full"
     :src="props.blok.url?.url"
     frameborder="0"
     loading="lazy"
