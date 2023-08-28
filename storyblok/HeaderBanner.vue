@@ -12,6 +12,7 @@ const props = defineProps<PropTypes>()
 <template>
   <div
     v-if="show"
+    v-editable="props.blok"
     class="relative flex items-center gap-x-6 overflow-hidden bg-charcoal-700 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
   >
     <NuxtLink :to="props.blok.link?.url" class="relative z-20 leading-6 text-white">

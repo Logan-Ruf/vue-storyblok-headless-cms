@@ -20,9 +20,13 @@ const props = defineProps<PropTypes>()
       }"
     />
     <h1
+      v-if="props.blok.title"
       class="relative z-10 px-4 text-center text-9xl font-semibold tracking-tighter text-white shadow-black drop-shadow-xl"
     >
       {{ props.blok.title }}
     </h1>
+    <div v-if="props.blok.body" class="relative z-10 px-8 md:max-w-[66vw] lg:max-w-[50vw]">
+      <StoryblokComponent v-for="child_block in props.blok.body" :key="child_block._uid" :blok="child_block" />
+    </div>
   </div>
 </template>

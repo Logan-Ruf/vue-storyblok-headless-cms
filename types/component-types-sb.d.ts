@@ -260,6 +260,7 @@ export interface FooterLinkStoryblok {
 export interface FullPageHeroStoryblok {
   image?: AssetStoryblok;
   title?: string;
+  body?: any[];
   _uid: string;
   component: "FullPageHero";
   [k: string]: any;
@@ -531,6 +532,14 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface PictureContainerStoryblok {
+  image: AssetStoryblok;
+  lazy?: boolean;
+  _uid: string;
+  component: "PictureContainer";
   [k: string]: any;
 }
 

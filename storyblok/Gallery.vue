@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { TabGroup, TabList, Tab, TabPanels, TabPanel, Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue"
 import { ref } from "vue"
+import { GalleryStoryblok } from "~/types/component-types-sb"
 interface PropTypes {
-  blok: blok
+  blok: GalleryStoryblok
 }
 
 const props = defineProps<PropTypes>()
