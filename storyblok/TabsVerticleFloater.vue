@@ -120,7 +120,7 @@ function setSelectedIndex() {
               <NuxtPicture
                 class="duration-500"
                 :imgAttrs="{
-                  class: 'aspect-[3/2] w-full rounded-2xl object-cover shadow-md transition-all duration-500'
+                  class: 'aspect-[3/2] w-full rounded-2xl object-cover shadow-md transition-all duration-500 bg-white'
                 }"
                 :src="tab.image.filename"
                 :alt="tab.image.alt"
