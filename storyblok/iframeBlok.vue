@@ -15,5 +15,6 @@ const props = defineProps<PropTypes>()
     :src="props.blok.url?.url"
     frameborder="0"
     loading="lazy"
+    allowfullscreen
   ></iframe>
 </template>
