@@ -32,8 +32,8 @@ const props = defineProps<PropTypes>()
     />
   </Head>
   <div v-editable="props.blok" class="mx-auto">
-    <div class="min-h-[80vh]">
-      <div class="relative flex min-h-[70vh] w-full md:min-h-0">
+    <div class="min-h-[80vh] flex flex-col">
+      <div class="relative flex min-h-[70vh] w-full md:min-h-0 grow">
         <div
           class="relative z-20 w-full self-end bg-gradient-to-b from-transparent via-charcoal-900/10 to-charcoal-900 px-6 pb-16 pt-48"
         >
