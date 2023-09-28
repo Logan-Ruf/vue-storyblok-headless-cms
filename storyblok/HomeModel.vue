@@ -32,8 +32,8 @@ const props = defineProps<PropTypes>()
     />
   </Head>
   <div v-editable="props.blok" class="mx-auto">
-    <div class="min-h-[80vh] flex flex-col">
-      <div class="relative flex min-h-[70vh] w-full md:min-h-0 grow">
+    <div class="flex min-h-[80vh] flex-col">
+      <div class="relative flex min-h-[70vh] w-full grow md:min-h-0">
         <div
           class="relative z-20 w-full self-end bg-gradient-to-b from-transparent via-charcoal-900/10 to-charcoal-900 px-6 pb-16 pt-48"
         >
@@ -51,6 +51,7 @@ const props = defineProps<PropTypes>()
               </ul>
             </div>
             <a
+              v-if="props.blok.floorPlan?.filename"
               :href="props.blok.floorPlan?.filename"
               target="_blank"
               class="flex-shrink-0 self-end rounded-xl bg-sand-200 p-4 px-6 font-semibold uppercase tracking-wider text-sand-800 hover:bg-sand-50 hover:text-sand-1000"

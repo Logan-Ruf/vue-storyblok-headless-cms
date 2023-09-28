@@ -9,11 +9,11 @@ const props = defineProps<PropTypes>()
 
 <template>
   <div
-    class="border border-charcoal-100 shadow-none shadow-charcoal-500/25 transition-shadow duration-300 hover:shadow-md hover:shadow-charcoal-500/25"
+    class="cursor-pointer border border-charcoal-100 shadow-none shadow-charcoal-500/25 transition-shadow duration-300 hover:shadow-md hover:shadow-charcoal-500/25"
     @click="navigateTo('/' + props.slug)"
   >
     <div class="relative">
-      <div v-if="props.model.matterPortLink">
+      <div v-if="props.model.matterPortLink?.url">
         <span
           class="absolute right-5 top-6 z-10 rounded-sm bg-charcoal-50 px-2 text-xs font-medium leading-5 text-charcoal-800"
         >
