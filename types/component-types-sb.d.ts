@@ -217,6 +217,13 @@ export interface ContentImageStoryblok {
   [k: string]: any;
 }
 
+export interface CustomContentStoryblok {
+  html?: string;
+  _uid: string;
+  component: "CustomContent";
+  [k: string]: any;
+}
+
 export interface DividerStoryblok {
   size: "none" | "sm" | "md" | "lg" | "xl";
   line_thickness: "none" | "sm" | "md" | "lg" | "xl";
